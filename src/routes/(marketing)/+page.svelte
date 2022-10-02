@@ -1,2 +1,8 @@
-<h1>One SaaS to rule them all</h1>
-<button>Get started now</button>
+<script lang="ts">
+  import Button from "$lib/components/Button.svelte";
+	import Heading from "$lib/components/headings/Heading.svelte";
+</script>
+
+
+<Heading>One SaaS to rule them all</Heading>
+<Button>Get started now</Button>
