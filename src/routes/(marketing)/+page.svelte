@@ -5,4 +5,4 @@
 
 
 <Heading>One SaaS to rule them all</Heading>
-<Button>Get started now</Button>
+<Button tag="a" href="/pricing">Get started now</Button>

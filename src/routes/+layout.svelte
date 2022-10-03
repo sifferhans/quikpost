@@ -1,29 +1,22 @@
 <script lang="ts">
+	import { page } from '$app/stores'
+
 	import "../app.css";
 	import Container from '$lib/components/Container.svelte';
 	import HeadingLevel from "$lib/components/headings/HeadingLevel.svelte";
-	import Button from "$lib/components/Button.svelte";
+
+	import Header from "$lib/components/Header.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<header>
-	<Container>
-		<div class="flex justify-between items-center py-4">
-			<strong>SaaS</strong>
-			<Button>Log in</Button>
-		</div>
-	</Container>
-</header>
-
-<main>
+<Header/>
+<main class="flex-grow">
 	<HeadingLevel>
 		<Container>
-			<slot />
+			{#key $page.url }
+				<slot  />
+			{/key}
 		</Container>
 	</HeadingLevel>
 </main>
-
-<footer>
-	<Container>
-		<span>Copyright</span>
-	</Container>
-</footer>
+<Footer/>

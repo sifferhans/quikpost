@@ -5,6 +5,6 @@
   const el = `h${level}`
 </script>
 
-<svelte:element this={el}>
+<svelte:element this={el} {...$$restProps}>
   <slot/>
 </svelte:element>
