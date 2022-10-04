@@ -4,21 +4,18 @@ export default [
     description: 'For individuals.',
     price: 0,
     features: [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3"
+      "API access",
+      "One post per month"
     ],
-    action: 'Start for free'
+    action: 'Start for free!'
   },
   {
     title: 'Pro',
     description: 'For professionals.',
     price: 5,
     features: [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4"
+      "API access",
+      "10 posts per month"
     ],
     featured: true
   },
@@ -27,11 +24,9 @@ export default [
     description: 'For teams.',
     price: 15,
     features: [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5"
+      "API access",
+      "Unlimited posts per month",
+      "Multiple authors"
     ]
   },
 ]

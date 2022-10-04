@@ -6,9 +6,10 @@
 	import items from './pricing'
 </script>
 
-<Heading class="my-10 text-4xl font-bold lg:text-5xl">Pricing</Heading>
+<Heading class="mt-10 mb-3 text-4xl font-bold lg:text-5xl">Pricing</Heading>
+<p>Fair pricing for fair software.</p>
 
-<ul class="grid gap-6 md:grid-cols-3 md:gap-8">
+<ul class="mt-10 grid gap-6 md:grid-cols-3 md:gap-8">
 	{#each items as item, index}
 		<li in:fly={{ y: 15, duration: 500, delay: 100 * index }}>
 			<PricingCard {...item} />

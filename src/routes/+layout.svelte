@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>SvelteKit SaaS</title>
+	<title>Quikpost</title>
 </svelte:head>
 
 <Header />

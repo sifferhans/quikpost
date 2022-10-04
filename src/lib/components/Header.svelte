@@ -17,7 +17,7 @@
 	<Container>
 		<div class="flex items-center justify-between py-8">
 			<a href="/">
-				<strong>SaaS Name</strong>
+				<strong>Quikpost</strong>
 			</a>
 			<nav class="flex items-center gap-10">
 				{#if !$page.data.user}
@@ -30,6 +30,7 @@
 
 				{#if $page.data.user}
 					<Link href="/dashboard">Dashboard</Link>
+					<Link href="/settings">Settings</Link>
 					<form
 						action="/logout"
 						method="post"

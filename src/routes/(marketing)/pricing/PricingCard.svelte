@@ -22,7 +22,7 @@
 
 <HeadingLevel>
 	<div
-		class={`relative rounded-2xl bg-white border border-gray-200 p-6 flex flex-col gap-6 ${
+		class={`relative h-full rounded-2xl bg-white border border-gray-200 p-6 flex flex-col gap-6 ${
 			featured ? 'border-gray-600 outline-4 outline outline-gray-200' : ''
 		}`}
 	>
@@ -33,12 +33,14 @@
 
 		<strong class="text-3xl">{formatPrice(price)}</strong>
 
-		<ul>
+		<ul class="flex-grow">
 			{#each features as feature}
 				<li class="list-item list-inside list-disc">{feature}</li>
 			{/each}
 		</ul>
 
-		<Button theme={featured ? 'primary' : 'secondary'} tag="a" href={actionUrl}>{action}</Button>
+		<Button theme={featured ? 'primary' : 'secondary'} tag="a" href={actionUrl}>
+			{action}
+		</Button>
 	</div>
 </HeadingLevel>
