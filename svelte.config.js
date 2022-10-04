@@ -8,8 +8,11 @@ const config = {
 	preprocess: preprocess({ postcss: true }),
 
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		serviceWorker: {
+			register: false
+		}
+	},
 };
 
 export default config;
