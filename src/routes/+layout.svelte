@@ -6,6 +6,10 @@
 	import Footer from '$lib/components/Footer.svelte'
 </script>
 
+<svelte:head>
+	<title>SvelteKit SaaS</title>
+</svelte:head>
+
 <Header />
 
 <main class="flex-grow">

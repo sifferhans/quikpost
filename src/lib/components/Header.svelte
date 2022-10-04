@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { page } from '$app/stores'
+
 	import Container from '$lib/components/Container.svelte'
 	import Button from '$lib/components/Button.svelte'
 	import Link from '$lib/components/Link.svelte'
+	import { invalidateAll } from '$app/navigation'
+	import { applyAction, enhance } from '$app/forms'
 
 	const items = [
 		{ slug: '/pricing', title: 'Pricing' },
@@ -15,17 +19,30 @@
 			<a href="/">
 				<strong>SaaS Name</strong>
 			</a>
-			<nav>
-				<ul class="flex items-center gap-8">
+			<nav class="flex items-center gap-10">
+				{#if !$page.data.user}
 					{#each items as item}
-						<li>
-							<Link href={item.slug}>{item.title}</Link>
-						</li>
+						<Link href={item.slug}>{item.title}</Link>
 					{/each}
-					<li>
-						<Button tag="a" href="/login">Log in</Button>
-					</li>
-				</ul>
+					<Link href="/login">Log in</Link>
+					<Button tag="a" href="/register">Register</Button>
+				{/if}
+
+				{#if $page.data.user}
+					<Link href="/dashboard">Dashboard</Link>
+					<form
+						action="/logout"
+						method="post"
+						use:enhance={() => {
+							return async ({ result }) => {
+								invalidateAll()
+								applyAction(result)
+							}
+						}}
+					>
+						<Button theme="secondary" type="submit">Log out</Button>
+					</form>
+				{/if}
 			</nav>
 		</div>
 	</Container>
