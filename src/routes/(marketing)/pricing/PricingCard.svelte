@@ -10,6 +10,7 @@
 	export let features: string[]
 	export let featured: boolean = false
 	export let action: string = 'Get started'
+	export let actionUrl: string = '/register'
 
 	function formatPrice(price: number): string {
 		return price.toLocaleString('en-US', {
@@ -38,6 +39,6 @@
 			{/each}
 		</ul>
 
-		<Button theme={featured ? 'primary' : 'secondary'}>{action}</Button>
+		<Button theme={featured ? 'primary' : 'secondary'} tag="a" href={actionUrl}>{action}</Button>
 	</div>
 </HeadingLevel>
