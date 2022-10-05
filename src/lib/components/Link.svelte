@@ -2,6 +2,6 @@
 	export let href: string
 </script>
 
-<a class="underline-offset-2 hover:underline" {href} {...$$restProps}>
+<a class="underline-offset-2 hover:underline" {href} {...$$restProps} data-sveltekit-prefetch>
 	<slot />
 </a>

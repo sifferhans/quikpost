@@ -1,21 +1,12 @@
 <script lang="ts">
+	import type { PageData } from './$types'
 	import { fly } from 'svelte/transition'
 
 	import Heading from '$lib/components/headings/Heading.svelte'
 	import PricingCard from './PricingCard.svelte'
-	import importedItems from './pricing'
 
-	interface Item {
-		price: number
-		title: string
-		description: string
-		features: Array<{ title: string; subtitle?: string }>
-		featured?: boolean
-		action?: string
-		actionUrl?: string
-	}
-
-	const items: Item[] = importedItems
+	export let data: PageData
+	const { items } = data
 </script>
 
 <Heading class="mt-10 mb-3 text-4xl font-bold lg:text-5xl">Pricing</Heading>

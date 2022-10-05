@@ -5,6 +5,7 @@
 
 <svelte:element
 	this={tag}
+	data-sveltekit-prefetch
 	{...$$restProps}
 	class={`inline-flex justify-center gap-4 px-4 py-2 rounded-md focus-visible:outline-2 focus-visible:outline ${
 		theme == 'primary'

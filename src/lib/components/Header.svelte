@@ -16,7 +16,7 @@
 <header>
 	<Container>
 		<div class="flex items-center justify-between py-8">
-			<a href="/">
+			<a href="/" data-sveltekit-prefetch>
 				<strong>Quikpost</strong>
 			</a>
 			<nav class="flex items-center gap-10">
