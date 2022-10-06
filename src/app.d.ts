@@ -6,6 +6,7 @@ declare namespace App {
 		user: {
 			email: string
 			role: string
+			id: string
 		}
 	}
 	// interface PageData {}

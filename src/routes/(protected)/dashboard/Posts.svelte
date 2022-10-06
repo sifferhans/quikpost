@@ -6,8 +6,9 @@
 
 	interface Post {
 		title: string
-		description: string
-		url: string
+		content: string
+		id: string
+		createdAt: Date
 	}
 
 	export let posts: Post[]
@@ -20,7 +21,7 @@
 		{/each}
 		<li>
 			<a
-				href="/posts/create"
+				href="/post/create"
 				class="flex aspect-video flex-col items-center justify-center gap-2 rounded-lg bg-gray-50 p-4 hover:bg-gray-100"
 			>
 				<FilePlus size={24} />

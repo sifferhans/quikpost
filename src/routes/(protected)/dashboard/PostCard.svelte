@@ -1,14 +1,18 @@
 <script lang="ts">
 	import Heading from '$lib/components/headings/Heading.svelte'
+	import { formatDate } from '$lib/utils'
 
 	export let title: string
-	export let description: string
-	export let url: string
+	export let publishedAt: Date
+	export let id: string
 </script>
 
 <li>
-	<a href={url} class="block aspect-video rounded-lg border border-gray-300 p-4">
-		<Heading class="text-xl font-bold">{title}</Heading>
-		<p class="mt-2 text-gray-500">{description}</p>
+	<a
+		href="/post/edit/{id}"
+		class="flex aspect-video flex-col justify-end rounded-lg border border-gray-300 p-4"
+	>
+		<Heading class="text-xl font-bold">{title || 'Untitled'}</Heading>
+		<p class="text-gray-400">{publishedAt ? formatDate(publishedAt) : 'Not published'}</p>
 	</a>
 </li>

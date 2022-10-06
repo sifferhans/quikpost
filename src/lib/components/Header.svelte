@@ -13,7 +13,7 @@
 	]
 </script>
 
-<header class="sticky top-0 bg-white/60 backdrop-blur-md">
+<header class="bg-white">
 	<Container>
 		<div class="flex items-center justify-between py-8">
 			<a href="/" data-sveltekit-prefetch>

@@ -18,9 +18,7 @@
 			<Input name="name" label="Name" />
 			<Input name="email" label="E-mail" value={user.email} disabled />
 		</FormGroup>
-		<div class="flex justify-end">
-			<Button type="submit">Save changes</Button>
-		</div>
+		<Button type="submit">Save changes</Button>
 
 		{#if form?.success}
 			<p class="text-green-600">Successfully saved!</p>

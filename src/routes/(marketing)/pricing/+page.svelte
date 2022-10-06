@@ -19,3 +19,7 @@
 		</li>
 	{/each}
 </ul>
+
+<section class="my-56">
+	<Heading class="text-2xl font-bold lg:text-3xl">Frequently asked questions</Heading>
+</section>
