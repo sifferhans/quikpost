@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@prisma/client": "^4.4.0",
+		"@rgossiaux/svelte-headlessui": "^1.0.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/bcrypt": "^5.0.0",

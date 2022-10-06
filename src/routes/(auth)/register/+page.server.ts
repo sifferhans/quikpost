@@ -32,7 +32,7 @@ const register: Action = async ({ request }) => {
 		where: { email }
 	})
 
-	if (user) return invalid(400, { user: true })
+	if (user) return invalid(400, { user: true, email })
 
 	await db.user.create({
 		data: {

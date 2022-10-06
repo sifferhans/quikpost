@@ -7,11 +7,13 @@
 </script>
 
 <HeadingLevel>
-	<section class="grid grid-cols-2">
+	<section class="grid min-h-[24rem] md:grid-cols-2">
 		<div>
 			<Heading class="my-3 text-3xl font-bold">{title}</Heading>
 			<p class="text-lg text-gray-500">{description}</p>
 		</div>
-		<slot />
+		<div class="ml-auto">
+			<slot />
+		</div>
 	</section>
 </HeadingLevel>

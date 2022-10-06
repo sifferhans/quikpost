@@ -11,7 +11,7 @@
 
 <form action="?/register" method="POST" class="mx-auto flex w-full max-w-md flex-col gap-6">
 	<Heading class="text-4xl font-bold lg:text-5xl">Register</Heading>
-	<Input label="Email" name="email" type="email" required />
+	<Input label="Email" name="email" type="email" required value={form?.email ?? ''} />
 	<Input label="Password" type="password" name="password" required />
 
 	{#if form?.user}

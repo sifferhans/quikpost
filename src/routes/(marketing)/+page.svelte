@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte'
 	import Heading from '$lib/components/headings/Heading.svelte'
+	import CtaBanner from './CtaBanner.svelte'
 	import Feature from './Feature.svelte'
 </script>
 
@@ -15,4 +16,15 @@
 <Feature
 	title="Frictionless writing"
 	description="Write, publish and edit your content in a single place."
-/>
+>
+	<p>Illustration here</p>
+</Feature>
+<Feature
+	title="Full API access"
+	description="Easily fetch your content and use it any way you like."
+>
+	<p>Illustration here</p>
+</Feature>
+
+<!-- Call to action -->
+<CtaBanner />

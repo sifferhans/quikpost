@@ -30,7 +30,7 @@ export const load: PageLoad = async () => {
 				features: [
 					{ title: "API access", subtitle: "Get your posts through our API." },
 					{ title: "Unlimited posts per month", subtitle: "Put your ideas out there." },
-					{ title: "Multiple authors", subtitle: "Work together." }
+					// { title: "Multiple authors", subtitle: "Work together." }
 				]
 			},
 		]

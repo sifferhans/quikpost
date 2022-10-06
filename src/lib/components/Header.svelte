@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import { invalidateAll } from '$app/navigation'
+	import { applyAction, enhance } from '$app/forms'
 
 	import Container from '$lib/components/Container.svelte'
 	import Button from '$lib/components/Button.svelte'
 	import Link from '$lib/components/Link.svelte'
-	import { invalidateAll } from '$app/navigation'
-	import { applyAction, enhance } from '$app/forms'
 
 	const items = [
 		{ slug: '/pricing', title: 'Pricing' },
-		{ slug: '/faq', title: 'FAQ' },
+		// { slug: '/faq', title: 'FAQ' },
 	]
 </script>
 
-<header>
+<header class="sticky top-0 bg-white/60 backdrop-blur-md">
 	<Container>
 		<div class="flex items-center justify-between py-8">
 			<a href="/" data-sveltekit-prefetch>

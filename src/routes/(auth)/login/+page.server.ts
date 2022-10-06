@@ -27,11 +27,11 @@ const login: Action = async ({ cookies, request }) => {
 		where: { email }
 	})
 
-	if (!user) return invalid(400, { credentials: true })
+	if (!user) return invalid(400, { credentials: true, email })
 
 	const userPassword = await bcrypt.compare(password, user.passwordHash)
 
-	if (!userPassword) return invalid(400, { credentials: true })
+	if (!userPassword) return invalid(400, { credentials: true, email })
 
 	const authenticatedUser = await db.user.update({
 		where: { email: user.email },
