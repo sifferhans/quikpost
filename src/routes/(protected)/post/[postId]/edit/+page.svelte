@@ -13,7 +13,7 @@
 
 	async function save() {
 		// return console.log('Successfully saved')
-		await fetch(`/post/edit/${id}`, {
+		await fetch(`/post/${id}/edit`, {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
@@ -25,7 +25,7 @@
 		})
 	}
 
-	const debouncedSave = debounce(save, 2000)
+	const debouncedSave = debounce(save, 1000)
 </script>
 
 <svelte:head>

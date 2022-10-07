@@ -6,27 +6,29 @@
 
 	interface Post {
 		title: string
-		content: string
 		id: string
-		createdAt: Date
+		publishedAt: Date
+		updatedAt: Date
 	}
 
 	export let posts: Post[]
 </script>
 
 <HeadingLevel>
-	<ul class="grid gap-6 md:grid-cols-4 md:gap-8">
+	<ul class="grid gap-6 md:grid-cols-4">
 		{#each posts as post, index (index)}
 			<PostCard {...post} />
 		{/each}
 		<li>
-			<a
-				href="/post/create"
-				class="flex aspect-video flex-col items-center justify-center gap-2 rounded-lg bg-gray-50 p-4 hover:bg-gray-100"
-			>
-				<FilePlus size={24} />
-				<Heading>Create new post</Heading>
-			</a>
+			<form action="/post/create" method="post">
+				<button
+					type="submit"
+					class="flex aspect-video h-full w-full flex-col items-center justify-center gap-2 rounded-lg bg-gray-50 p-4 hover:bg-gray-100"
+				>
+					<FilePlus size={24} />
+					<Heading>Create new post</Heading>
+				</button>
+			</form>
 		</li>
 	</ul>
 </HeadingLevel>

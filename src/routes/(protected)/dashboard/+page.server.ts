@@ -7,9 +7,9 @@ export const load: PageServerLoad = async ({ request }) => {
 	const posts = await db.post.findMany({
 		select: {
 			title: true,
-			content: true,
 			id: true,
-			createdAt: true,
+			publishedAt: true,
+			updatedAt: true,
 		},
 	})
 	if (!posts?.length) throw error(404, 'No posts found')

@@ -2,15 +2,13 @@
 	import '../app.css'
 	import Container from '$lib/components/Container.svelte'
 	import HeadingLevel from '$lib/components/headings/HeadingLevel.svelte'
-	import Header from '$lib/components/Header.svelte'
-	import Footer from '$lib/components/Footer.svelte'
 </script>
 
 <svelte:head>
 	<title>Quikpost</title>
 </svelte:head>
 
-<Header />
+<slot name="header" />
 
 <main class="flex-grow">
 	<HeadingLevel>
@@ -20,4 +18,4 @@
 	</HeadingLevel>
 </main>
 
-<Footer />
+<slot name="footer" />
