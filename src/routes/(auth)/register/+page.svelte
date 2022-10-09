@@ -5,6 +5,7 @@
 	import Button from '$lib/components/Button.svelte'
 	import Heading from '$lib/components/headings/Heading.svelte'
 	import Input from '$lib/components/Input.svelte'
+	import Link from '$lib/components/Link.svelte'
 
 	export let form: ActionData
 </script>
@@ -24,3 +25,8 @@
 
 	<Button type="submit">Register account</Button>
 </form>
+
+<p>
+	<span class="text-gray-400">Already have an account?</span>
+	<Link href="/login">Log in</Link>
+</p>

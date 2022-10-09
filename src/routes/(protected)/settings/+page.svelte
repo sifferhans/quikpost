@@ -15,7 +15,7 @@
 <HeadingLevel>
 	<form action="?/save" method="post">
 		<FormGroup name="Profile">
-			<Input name="name" label="Name" />
+			<Input name="name" label="Name" value={user.displayName} />
 			<Input name="email" label="E-mail" value={user.email} disabled />
 		</FormGroup>
 		<Button type="submit">Save changes</Button>

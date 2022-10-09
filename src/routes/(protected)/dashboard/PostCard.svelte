@@ -10,6 +10,7 @@
 
 <li class="relative">
 	<a
+		data-sveltekit-prefetch
 		href="/post/{id}/edit"
 		class="flex aspect-video flex-col items-start justify-end rounded-lg border border-gray-300 bg-white p-4 hover:border-gray-400"
 	>

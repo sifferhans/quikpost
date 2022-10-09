@@ -10,14 +10,15 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	const user = await db.user.findUnique({
 		where: { userAuthToken: session },
-		select: { email: true, role: true, id: true }
+		select: { email: true, role: true, id: true, displayName: true }
 	})
 
 	if (user) {
 		event.locals.user = {
 			email: user.email,
 			role: user.role.name,
-			id: user.id
+			id: user.id,
+			displayName: user.displayName
 		}
 	}
 
