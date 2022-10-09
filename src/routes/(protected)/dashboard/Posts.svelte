@@ -3,21 +3,31 @@
 	import HeadingLevel from '$lib/components/headings/HeadingLevel.svelte'
 	import PostCard from './PostCard.svelte'
 	import { FilePlus } from 'tabler-icons-svelte'
+	import { flip } from 'svelte/animate'
+	import { fly } from 'svelte/transition'
 
 	interface Post {
 		title: string
 		id: string
-		publishedAt: Date
+		publishedAt: Date | null
 		updatedAt: Date
 	}
 
 	export let posts: Post[]
+
+	$: sortedPosts = posts.sort((a, b) => {
+		if (a.updatedAt > b.updatedAt) return -1
+		if (a.updatedAt < b.updatedAt) return 1
+		return 0
+	})
 </script>
 
 <HeadingLevel>
 	<ul class="grid gap-6 md:grid-cols-4">
-		{#each posts as post, index (index)}
-			<PostCard {...post} />
+		{#each sortedPosts as post, i (post)}
+			<div animate:flip={{ duration: 500 }} in:fly={{ y: -10, duration: 300, delay: i * 75 }}>
+				<PostCard {...post} />
+			</div>
 		{/each}
 		<li>
 			<form action="/post/create" method="post">

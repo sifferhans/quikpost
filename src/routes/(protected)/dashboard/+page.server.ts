@@ -2,9 +2,11 @@ import type { PageServerLoad } from "./$types";
 import { db } from '$lib/db'
 import { error } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async ({ request }) => {
+export const load: PageServerLoad = async ({ request, locals }) => {
+	const { user } = locals
 
 	const posts = await db.post.findMany({
+		where: { authorId: user.id },
 		select: {
 			title: true,
 			id: true,
@@ -12,7 +14,6 @@ export const load: PageServerLoad = async ({ request }) => {
 			updatedAt: true,
 		},
 	})
-	if (!posts?.length) throw error(404, 'No posts found')
 
 	return {
 		posts
