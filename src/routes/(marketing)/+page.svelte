@@ -28,6 +28,7 @@
 <Feature
 	title="Full API access"
 	description="Easily fetch your content and use it any way you like."
+	inverted
 >
 	<img
 		src={illustration_1}
