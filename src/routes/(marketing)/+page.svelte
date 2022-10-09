@@ -4,7 +4,7 @@
 	import CtaBanner from './CtaBanner.svelte'
 	import Feature from './Feature.svelte'
 
-	import illustration_1 from '$lib/assets/illustrations/1.png'
+	import illustration_1 from '$lib/assets/illustrations/1.webp'
 </script>
 
 <!-- Hero -->
@@ -19,13 +19,21 @@
 	title="Frictionless writing"
 	description="Write, publish and edit your content in a single place."
 >
-	<img src={illustration_1} alt="" />
+	<img
+		src={illustration_1}
+		alt=""
+		title="This illustration is just an example made with DALL-E 2"
+	/>
 </Feature>
 <Feature
 	title="Full API access"
 	description="Easily fetch your content and use it any way you like."
 >
-	<img src={illustration_1} alt="" />
+	<img
+		src={illustration_1}
+		alt=""
+		title="This illustration is just an example made with DALL-E 2"
+	/>
 </Feature>
 
 <!-- Call to action -->

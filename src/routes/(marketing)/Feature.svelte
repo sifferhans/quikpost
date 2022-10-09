@@ -12,7 +12,7 @@
 			<Heading class="my-3 text-3xl font-bold">{title}</Heading>
 			<p class="text-lg text-gray-500">{description}</p>
 		</div>
-		<div class="ml-auto">
+		<div class="ml-auto p-6">
 			<slot />
 		</div>
 	</section>
