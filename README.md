@@ -1,3 +1,5 @@
+<img width="493" alt="Frame 1 (2)" src="https://user-images.githubusercontent.com/18753964/194757487-388aadac-d5b9-46ae-a608-b099d1a77a37.png">
+
 # Quikpost
 An example SaaS app — and marketing site — made with SvelteKit.
 
