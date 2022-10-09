@@ -23,6 +23,6 @@ export const actions: Actions = {
 			data: { displayName }
 		})
 
-		return { success: true }
+		return { success: true, displayName }
 	}
 }
