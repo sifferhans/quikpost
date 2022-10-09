@@ -3,12 +3,13 @@
 	import Heading from '$lib/components/headings/Heading.svelte'
 	import HeadingLevel from '$lib/components/headings/HeadingLevel.svelte'
 	import Posts from './Posts.svelte'
+	import type { Post } from '@prisma/client'
 
 	export let data: PageData
 	const { posts } = data
 
 	let filter: 'published' | 'draft' | 'all' = 'all'
-	$: filteredPosts = posts.filter((post) => {
+	$: filteredPosts = posts.filter((post: Post) => {
 		switch (filter) {
 			case 'published':
 				return !!post.publishedAt

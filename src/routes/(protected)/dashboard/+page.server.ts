@@ -2,8 +2,10 @@ import type { PageServerLoad } from "./$types";
 import { db } from '$lib/db'
 import { error } from "@sveltejs/kit";
 
-export const load: PageServerLoad = async ({ request, locals }) => {
+export const load: PageServerLoad = async ({ locals }) => {
 	const { user } = locals
+
+	if (!user) return error(401, 'Unauthorized')
 
 	const posts = await db.post.findMany({
 		where: { authorId: user.id },

@@ -6,11 +6,9 @@
 	import Container from '$lib/components/Container.svelte'
 	import Button from '$lib/components/Button.svelte'
 	import Link from '$lib/components/Link.svelte'
+	import { Lock } from 'tabler-icons-svelte'
 
-	const items = [
-		{ slug: '/pricing', title: 'Pricing' },
-		// { slug: '/faq', title: 'FAQ' },
-	]
+	const items = [{ slug: '/pricing', title: 'Pricing' }]
 </script>
 
 <header class="bg-white">
@@ -29,6 +27,12 @@
 				{/if}
 
 				{#if $page.data.user}
+					{#if $page.data.user.role === 'ADMIN'}
+						<Link href="/admin">
+							Admin
+							<Lock size={16} />
+						</Link>
+					{/if}
 					<Link href="/dashboard">Dashboard</Link>
 					<Link href="/settings">Settings</Link>
 					<form

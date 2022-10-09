@@ -3,6 +3,8 @@
 	import Heading from '$lib/components/headings/Heading.svelte'
 	import CtaBanner from './CtaBanner.svelte'
 	import Feature from './Feature.svelte'
+
+	import illustration_1 from '$lib/assets/illustrations/1.png'
 </script>
 
 <!-- Hero -->
@@ -17,13 +19,13 @@
 	title="Frictionless writing"
 	description="Write, publish and edit your content in a single place."
 >
-	<p>Illustration here</p>
+	<img src={illustration_1} alt="" />
 </Feature>
 <Feature
 	title="Full API access"
 	description="Easily fetch your content and use it any way you like."
 >
-	<p>Illustration here</p>
+	<img src={illustration_1} alt="" />
 </Feature>
 
 <!-- Call to action -->
