@@ -27,14 +27,14 @@
 				{/if}
 
 				{#if $page.data.user}
+					<Link href="/dashboard">Dashboard</Link>
+					<Link href="/settings">Settings</Link>
 					{#if $page.data.user.role === 'ADMIN'}
 						<Link href="/admin">
 							Admin
 							<Lock size={16} />
 						</Link>
 					{/if}
-					<Link href="/dashboard">Dashboard</Link>
-					<Link href="/settings">Settings</Link>
 					<form
 						action="/logout"
 						method="post"

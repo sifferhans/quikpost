@@ -25,7 +25,7 @@
 <HeadingLevel>
 	<ul class="grid gap-6 md:grid-cols-4">
 		{#each sortedPosts as post, i (post)}
-			<div animate:flip={{ duration: 500 }} in:fly={{ y: -10, duration: 300, delay: i * 75 }}>
+			<div animate:flip={{ duration: 500 }} in:fly={{ y: -10, duration: 300, delay: i * 50 }}>
 				<PostCard {...post} />
 			</div>
 		{/each}
