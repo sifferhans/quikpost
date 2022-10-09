@@ -1,5 +1,4 @@
-# Quikpost - A simple CMS for simple posts
-
+# Quikpost
 An example SaaS app — and marketing site — made with SvelteKit.
 
 ## Development
