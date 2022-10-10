@@ -4,6 +4,7 @@
 	import Heading from '$lib/components/headings/Heading.svelte'
 	import HeadingLevel from '$lib/components/headings/HeadingLevel.svelte'
 	import Input from '$lib/components/Input.svelte'
+	import Toast from '$lib/components/Toast.svelte'
 	import type { ActionData, PageData } from './$types'
 
 	export let form: ActionData
@@ -18,13 +19,15 @@
 			<Input name="name" label="Name" value={user.displayName || form?.displayName} />
 			<Input name="email" label="E-mail" value={user.email} disabled />
 		</FormGroup>
-		<Button type="submit">Save changes</Button>
+		<div class="flex justify-end gap-3">
+			<Button type="submit">Save changes</Button>
+		</div>
 
 		{#if form?.success}
-			<p class="text-green-600">Successfully saved!</p>
+			<Toast type="success" message="Successfully saved!" />
 		{/if}
 		{#if form?.invalid}
-			<p class="text-red-600">Invalid input</p>
+			<Toast type="error" message="Invalid input." />
 		{/if}
 	</form>
 </HeadingLevel>
