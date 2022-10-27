@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Editor from '$lib/components/Editor/index.svelte'
+	import Toolbar from '$lib/components/post/Toolbar.svelte'
 	import { debounce } from '$lib/utils'
 	import type { PageData } from './$types'
 
@@ -12,7 +13,6 @@
 	}
 
 	async function save() {
-		// return console.log('Successfully saved')
 		await fetch(`/post/${id}/edit`, {
 			method: 'PATCH',
 			headers: {
@@ -24,8 +24,18 @@
 			}),
 		})
 	}
-
 	const debouncedSave = debounce(save, 1000)
+
+	function deletePost() {
+		console.log('Delete: ', id)
+	}
+
+	function togglePublished() {
+		console.log('Toggle published')
+		published = !published
+	}
+
+	let published = false
 </script>
 
 <svelte:head>
@@ -35,6 +45,7 @@
 <div class="prose mx-auto" on:keyup={debouncedSave}>
 	<h1 contenteditable bind:textContent={title} class="outline-none" />
 	<Editor {content} on:update={updateContent} />
+	<Toolbar bind:published on:delete={deletePost} on:togglePublished={togglePublished} />
 </div>
 
 <style>

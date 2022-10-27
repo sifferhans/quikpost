@@ -25,9 +25,9 @@ model User {
 }
 
 model Roles {
-  id   Int    @id @default(autoincrement())
-  name String @unique
-  User User[]
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  users User[]
 }
 
 // Posts

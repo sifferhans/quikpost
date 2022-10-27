@@ -13,3 +13,15 @@ export const GET: RequestHandler = async ({ params, locals }) => {
 
 	return json(post)
 }
+
+export const DELETE: RequestHandler = async ({ params, locals }) => {
+	if (!locals.user) return new Response('Unauthorized', { status: 401 })
+
+	const { postId } = params
+
+	const post = await db.post.delete({
+		where: { id: postId },
+	})
+
+	return json(post)
+}

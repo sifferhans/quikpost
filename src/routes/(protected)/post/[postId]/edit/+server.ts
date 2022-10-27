@@ -9,7 +9,7 @@ export const PATCH: RequestHandler = async ({ locals, request, params }) => {
 	if (!body) throw error(400, 'No body')
 
 	const { postId } = params
-	const updateUser = await db.post.update({
+	const updatedPost = await db.post.update({
 		where: { id: postId },
 		data: {
 			title: body.title,
@@ -17,5 +17,5 @@ export const PATCH: RequestHandler = async ({ locals, request, params }) => {
 		}
 	})
 
-	return new Response(JSON.stringify({ success: true }))
+	return new Response(JSON.stringify({ success: true, updatedPost }))
 }

@@ -9,8 +9,10 @@
 
 <!-- Hero -->
 <div class="flex min-h-[50vh] flex-col items-center justify-center">
-	<p class="tracking-wide">You probably don't need that homemade CMS.</p>
-	<Heading class="mb-10 text-center text-4xl font-bold lg:text-6xl">Focus on your writing.</Heading>
+	<Heading class=" text-center text-4xl font-bold lg:text-6xl">Focus on your writing.</Heading>
+	<p class="mb-10 mt-4 tracking-wide">
+		Write, publish and fetch your posts from one dead-simple CMS.
+	</p>
 	<Button tag="a" href="/pricing">Get started now</Button>
 </div>
 

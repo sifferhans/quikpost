@@ -4,7 +4,6 @@
 
 <footer class="py-6">
 	<Container>
-		<span>Copyright &copy;</span>
-		<span>{new Date().getFullYear()}</span>
+		<p class="text-center opacity-50">Copyright {new Date().getFullYear()} &copy; Sigve Hansen</p>
 	</Container>
 </footer>
