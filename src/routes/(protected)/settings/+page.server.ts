@@ -1,5 +1,5 @@
 import { db } from "$lib/db"
-import { invalid, redirect } from "@sveltejs/kit"
+import { fail, redirect } from "@sveltejs/kit"
 import type { PageServerLoad, Actions } from "./$types"
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -15,7 +15,7 @@ export const actions: Actions = {
 		const data = await request.formData()
 		const displayName = data.get('name')
 
-		if (typeof displayName !== 'string') return invalid(400, { invalid: true })
+		if (typeof displayName !== 'string') return fail(400, { invalid: true })
 
 		const { user } = locals
 		const updatedUser = await db.user.update({

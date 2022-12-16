@@ -1,4 +1,4 @@
-import { invalid, redirect } from '@sveltejs/kit'
+import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, Action, PageServerLoad } from './$types'
 import bcrypt from 'bcrypt'
 
@@ -24,7 +24,7 @@ const register: Action = async ({ request }) => {
 		!email ||
 		!password
 	) {
-		return invalid(400, { invalid: true })
+		return fail(400, { invalid: true })
 	}
 
 	// Check if user exists
@@ -32,7 +32,7 @@ const register: Action = async ({ request }) => {
 		where: { email }
 	})
 
-	if (user) return invalid(400, { user: true, email })
+	if (user) return fail(400, { user: true, email })
 
 	await db.user.create({
 		data: {

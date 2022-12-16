@@ -1,4 +1,4 @@
-import { invalid, redirect } from '@sveltejs/kit'
+import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, Action, PageServerLoad } from './$types'
 import bcrypt from 'bcrypt'
 
@@ -20,18 +20,18 @@ const login: Action = async ({ cookies, request }) => {
 		!email ||
 		!password
 	) {
-		return invalid(400, { invalid: true })
+		return fail(400, { invalid: true })
 	}
 
 	const user = await db.user.findUnique({
 		where: { email }
 	})
 
-	if (!user) return invalid(400, { credentials: true, email })
+	if (!user) return fail(400, { credentials: true, email })
 
 	const userPassword = await bcrypt.compare(password, user.passwordHash)
 
-	if (!userPassword) return invalid(400, { credentials: true, email })
+	if (!userPassword) return fail(400, { credentials: true, email })
 
 	const authenticatedUser = await db.user.update({
 		where: { email: user.email },
