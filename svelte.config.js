@@ -13,6 +13,13 @@ const config = {
 			register: false
 		}
 	},
+
+	// CMD + SHIFT to open the inspector in-browser
+	vitePlugin: {
+		experimental: {
+			inspector: true
+		}
+	}
 };
 
 export default config;
