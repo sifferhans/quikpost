@@ -6,19 +6,17 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const { user } = locals
 	if (!user) return error(401, 'Unauthorized')
 
-	async function getPosts() {
-		return await db.post.findMany({
-			where: { authorId: user.id },
-			select: {
-				title: true,
-				id: true,
-				publishedAt: true,
-				updatedAt: true,
-			},
-		})
-	}
+	const posts = await db.post.findMany({
+		where: { authorId: user.id },
+		select: {
+			title: true,
+			id: true,
+			publishedAt: true,
+			updatedAt: true,
+		},
+	})
 
 	return {
-		posts: getPosts()
+		posts
 	}
 }
