@@ -16,7 +16,7 @@
 
 <svelte:element
 	this={tag}
-	data-sveltekit-prefetch
+	data-sveltekit-preload-data
 	{...$$restProps}
 	class="inline-flex justify-center gap-4 rounded-md focus-visible:outline focus-visible:outline-2 {themeClasses[
 		theme
