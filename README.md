@@ -39,8 +39,12 @@ You can preview the production build with `npm run preview`.
 > To deploy the app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
 ## Stack
+
 - **Framework**  
 https://kit.svelte.dev
+
+- **Database**  
+https://sqlite.org
 
 - **ORM**  
 https://prisma.io
